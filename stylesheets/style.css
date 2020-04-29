@@ -1,0 +1,118 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.flex-grid {
+  display: flex;
+  flex-direction: row;
+  /*flex-wrap: wrap;*/
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.taglist{
+  float:left;
+}
+
+.tagmap{
+  float:right;
+  margin: 14px;
+  margin-right: 30px;
+}
+
+.tagging{
+  order:0;
+  flex-basis: 25%;
+  float: left;
+}
+
+
+.discovery {
+  order:1;
+  flex-basis: 73%;
+  float: left;
+}
+
+input[type="text"]{
+  padding: 5px;
+}
+
+header{
+  background-color: gray;
+  padding: 10px;
+}
+
+footer{
+  background-color: gray;
+  padding: 10px;
+}
+
+.blockTag{
+  display:block;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#submitTagging{
+  margin-top: 15px;
+  padding: 5px;
+}
+
+label{
+  line-height: 1.5;
+}
+
+li{
+  background-color: #00ffff;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 5px;
+}
+
+
+@media screen and (max-width:850px){
+  .tagging{
+    order:0;
+    flex-basis: 100%;
+    float: left;
+  }
+
+
+  .discovery {
+    order:1;
+    flex-basis: 100%;
+    float: left;
+  }
+
+
+  .taglist{
+    flex-basis: 100%;
+    order: 3;
+  }
+
+  .tagmap{
+    flex-basis: 100%;
+    float: left;
+    margin: 14px;
+    margin-right: 30px;
+    order:4;
+  }
+
+  .flex-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
