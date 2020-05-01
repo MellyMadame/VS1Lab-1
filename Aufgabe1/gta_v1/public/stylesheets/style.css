@@ -1,8 +1,56 @@
+header{
+  background-color: grey;
+  color: white;
+  padding:50px;
+}
 body {
+  box-sizing: border-box;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
 }
 
 a {
   color: #00B7FF;
+}
+fieldset{
+  width: 25%;
+  float:left;
+  padding:10px;
+  margin-left: 10px;
+  display: inline-block;
+}
+label{
+
+  display: block;
+  }
+
+li{
+  color:white;
+  padding:5px;
+  margin:5px;
+  margin-left:-35px;
+  background-color:#1ad4f5;
+  display:inline-block;
+}
+
+.discovery{
+  width:75%;
+  display: inline-block;
+  float: right;
+}
+#apply{
+  margin: 5px;
+}
+.tagmap{
+  float:right;
+  display:inline;
+}
+footer{
+  clear:both;
+  margin:0;
+  width:100%;
+  background-color: grey;
+  color:white;
+
 }

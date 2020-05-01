@@ -1,3 +1,8 @@
+head{
+  background-color: grey;
+  color: yellow;
+  padding:50px;
+}
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;

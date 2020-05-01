@@ -24,23 +24,40 @@
 
 			<section class="tagging">
 				<h2>Tagging</h2>
+				<fieldset>
+					<legend>Enter new GeoTag</legend>
+					<label for="latitude">latitude</label>
+						<input type="text" name="latitudebox" id="latitudebox" placeholder="enter latitude" required>
 
+					<label for="longitude">longitude</label>
+					<input type="text" id="longitudebox" placeholder="enter longitude" required>
+					<label for="name">name</label>
+					<input type="text" id="namebox" placeholder="enter name" maxlength="10" required>
+					<label for="hashtag">hashtag</label>
+					<input type="text" id="hashtagbox" pattern=#+{,10} placeholder="# + max 10. letters" maxlength="11">
+					<p></p>
+					<button type=submit id="submit">submit</button>
 				<!-- ############### Aufgabe1a Form1 Start -->
 				<form id="tag-form" action="/tagging" method="post"></form>
 				<!-- ############### Aufgabe1a Form1 Ende -->
-
+		</fieldset>
 			</section>
 
 			<section class="discovery">
 				<h2>Discovery</h2>
-
+				<fieldset>
+				<legend>Filter by Searchterm</legend>
+				<input type="text">
+				<button type=button id="apply">apply</button>
 				<!-- ############### Aufgabe1a Form2 Start -->
 				<form id="filter-form" action="/discovery" method="post"></form>
+			</fieldset>
 				<!-- ############### Aufgabe1a Form2 Ende -->
 
 				<div class="taglist">
 					<ul id="results">
 						<li>Castle (49.01379, 8.404435) #sight</li>
+						<br>
 						<li>IWI (49.01379, 8.390071) #edu</li>
 					</ul>
 				</div>
