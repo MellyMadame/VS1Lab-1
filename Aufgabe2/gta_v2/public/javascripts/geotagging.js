@@ -49,6 +49,7 @@ var gtaLocator = (function GtaLocator(geoLocationApi) {
     var tryLocate = function(onsuccess, onerror) {
         if (geoLocationApi) {
             geoLocationApi.getCurrentPosition(onsuccess, function(error) {
+//Elly: was ist msg??
                 var msg;
                 switch (error.code) {
                     case error.PERMISSION_DENIED:
@@ -82,7 +83,7 @@ var gtaLocator = (function GtaLocator(geoLocationApi) {
     };
 
     // Hier Google Maps API Key eintragen
-    var apiKey = "YOUR_API_KEY_HERE";
+    var apiKey = "68yolwfMlfIeee5GasPSWwu8yPulB7J3";
 
     /**
      * Funktion erzeugt eine URL, die auf die Karte verweist.
@@ -94,6 +95,7 @@ var gtaLocator = (function GtaLocator(geoLocationApi) {
      * zoom: Zoomfaktor der Karte
      */
     var getLocationMapSrc = function(lat, lon, tags, zoom) {
+//Elly: Tenärer Operator anschauen
         zoom = typeof zoom !== 'undefined' ? zoom : 10;
 
         if (apiKey === "YOUR_API_KEY_HERE") {
@@ -119,9 +121,15 @@ var gtaLocator = (function GtaLocator(geoLocationApi) {
 
         readme: "Dieses Objekt enthält 'öffentliche' Teile des Moduls.",
 
-        updateLocation: function() {
-            // TODO Hier Inhalt der Funktion "update" ergänzen
-        }
+        updateLocation: (function() {
+          tryLocate(function(position){
+            $("latitude").value=    getLatitude(position);
+            $("longitude").value=getLongitude(position);
+
+          });
+
+            // TODO Hier Inhalt der Funktion "update" ergänzen Elly
+        })
 
     }; // ... Ende öffentlicher Teil
 })(GEOLOCATIONAPI);
@@ -133,5 +141,6 @@ var gtaLocator = (function GtaLocator(geoLocationApi) {
  */
 $(function() {
     alert("Please change the script 'geotagging.js'");
+    gtaLocator.updateLocation();
     // TODO Hier den Aufruf für updateLocation einfügen
 });

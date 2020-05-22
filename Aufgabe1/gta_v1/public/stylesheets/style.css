@@ -1,56 +1,126 @@
-header{
-  background-color: grey;
-  color: white;
-  padding:50px;
-}
-body {
+*{
   box-sizing: border-box;
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 
+body {
+  padding: 50px;
+  background-color:#BCF5A9;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
-}
-fieldset{
-  width: 25%;
-  float:left;
-  padding:10px;
-  margin-left: 10px;
-  display: inline-block;
-}
-label{
-
-  display: block;
-  }
-
-li{
-  color:white;
+  background-color:white;
   padding:5px;
-  margin:5px;
-  margin-left:-35px;
-  background-color:#1ad4f5;
-  display:inline-block;
 }
 
-.discovery{
-  width:75%;
-  display: inline-block;
-  float: right;
+
+.flex-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-#apply{
-  margin: 5px;
+
+.taglist{
+  float:left;
 }
+
 .tagmap{
   float:right;
-  display:inline;
+  margin: 14px;
+  margin-right:30px;
 }
-footer{
-  clear:both;
-  margin:0;
-  width:100%;
-  background-color: grey;
-  color:white;
 
+.tagging{
+  order:0;
+  flex-basis: 25%;
+  float: left;
+}
+
+
+.discovery {
+  order:1;
+  flex-basis: 73%;
+  float: left;
+}
+
+input[type="text"]{
+  padding: 5px;
+}
+
+header{
+  background-image: url("Kind2.jpg");
+    background-color:#BCF5A9;
+    background-repeat: no-repeat;
+    background-size:1200px;
+    color: white;
+    padding:10px;
+}
+
+footer{
+  background-color:#04B404;
+  padding: 10px;
+  color:white;
+}
+
+.blockTag{
+  display:block;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#submitTagging{
+  margin-top: 15px;
+  padding: 5px;
+}
+
+label{
+  line-height: 1.5;
+}
+
+li{
+  background-color: #04B404;
+  color:white;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 5px;
+}
+
+
+@media screen and (max-width:850px){
+  .tagging{
+    order:0;
+    flex-basis: 100%;
+    float: left;
+  }
+
+
+  .discovery {
+    order:1;
+    flex-basis: 100%;
+    float: left;
+  }
+
+
+  .taglist{
+    flex-basis: 100%;
+    order: 2;
+  }
+
+  .tagmap{
+    flex-basis: 100%;
+    float: left;
+    margin: 14px;
+    margin-right: 30px;
+    order:3;
+  }
+
+  .flex-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
